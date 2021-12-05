@@ -1,4 +1,5 @@
-﻿Write-Host "running checks"
+Add-Type -AssemblyName System.Windows.Forms
+Write-Host "running checks"
     $apps = Get-AppxPackage | Select Name, PackageFullName
     $minecraft = Get-AppxPackage -Name Microsoft.MinecraftUWP
     if("Microsoft.MinecraftUWP" -in $apps.Name){
