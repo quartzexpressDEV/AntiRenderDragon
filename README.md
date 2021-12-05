@@ -13,7 +13,7 @@ How to run:
 
 5. Unblock the script using the `Unblock-File` cmdlet (snippet if you are in the downloads folder: `Unblock-File .\AntiRenderDragon-master\AntiRenderDragon.ps1`)
 
-6. Run the script from the PowerShell terminal (again, heres a snippet: `.\AntiRenderDragon-master\AntiRenderDragon.ps1`)
+6. Run the script
 
 7. After you are done you can set the ExecutionPolicy back to what it was before, though it is not really needed with "RemoteSigned". To change it back run this command: `Set-ExecutionPolicy Default`
 
