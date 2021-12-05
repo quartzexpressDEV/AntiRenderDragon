@@ -54,7 +54,7 @@ if ($result -eq 1){
         Write-Host "downloaded x86 version"
 
         Write-Host "uninstalling minecraft"
-        Remove-AppxPackage -Package "Microsoft.MinecraftUWP_8wekyb3d8bbwe"
+        Remove-AppxPackage -Package "$minecraft"
         Write-Host "uninstalled minecraft"
 
         Write-Host "installing x86 minecraft"
@@ -87,7 +87,7 @@ if ($result -eq 1){
         Write-Host "downloaded x86 version"
 
         Write-Host "uninstalling minecraft"
-        Remove-AppxPackage -Package "Microsoft.MinecraftUWP_8wekyb3d8bbwe"
+        Remove-AppxPackage -Package "$minecraft"
         Write-Host "uninstalled minecraft"
 
         Write-Host "installing x86 minecraft"
