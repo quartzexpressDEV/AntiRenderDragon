@@ -17,6 +17,8 @@ How to run:
 
 7. After you are done you can set the ExecutionPolicy back to what it was before, though it is not really needed with "RemoteSigned". To change it back run this command: `Set-ExecutionPolicy Default`
 
+
 if you have any questions dont hesitate to open a new issue
+oh i forgot to say this: PLEASE MAKE A BACKUP BEFORE RUNNING THIS
 
 have fun with it
