@@ -1,4 +1,38 @@
-﻿$message = "This script changes the architecture of your Minecraft to x86"
+﻿Write-Host "running checks"
+    $apps = Get-AppxPackage | Select Name, PackageFullName
+    $minecraft = Get-AppxPackage -Name Microsoft.MinecraftUWP
+    if("Microsoft.MinecraftUWP" -in $apps.Name){
+        
+        if ($minecraft -match "x86"){
+            [System.Windows.Forms.MessageBox]::Show("You are already running the x86 version")
+            exit
+        }
+    }
+    else{
+        $install = [System.Windows.Forms.MessageBox]::Show("install x86 minecraft?", "Install Minecraft?", 1, 32)
+        if($install -eq 1){
+
+        Write-Host "downloading x86 minecraft"
+        Invoke-WebRequest -Uri "https://renderdragon.pink/latest" -OutFile "$env:TEMP\minecraft_x86_temp.appx"
+        Write-Host "downloaded x86 minecraft"
+
+        Write-Host "installing x86 minecraft"
+        Add-AppxPackage -Path "$env:TEMP\minecraft_x86_temp.appx"
+        Write-Host "installed x86 minecraft"
+
+        Write-Host "clearing up..."
+            Remove-Item -Path "$env:TEMP\minecraft_x86_temp.appx" -Force
+                Write-Host "cleared temp package"
+        Write-Host "finished clearing up"
+
+        }
+        else{
+        exit
+        }
+    }
+Write-Host "finished running checks"
+
+$message = "This script changes the architecture of your Minecraft to x86"
 $title = "Confirm"
 
 $result = [System.Windows.Forms.MessageBox]::Show($message, $title, 1, 48)
@@ -32,10 +66,10 @@ if ($result -eq 1){
         Write-Host "restored game data"
 
         Write-Host "clearing up..."
-        Remove-Item -Path "$env:TEMP\Microsoft.MinecraftUWP_8wekyb3d8bbwe" -Force -Recurse
-            Write-Host "cleared temp game data"
-        Remove-Item -Path "$env:TEMP\minecraft_x86_temp.appx" -Force
-            Write-Host "cleared temp package"
+            Remove-Item -Path "$env:TEMP\Microsoft.MinecraftUWP_8wekyb3d8bbwe" -Force -Recurse
+                Write-Host "cleared temp game data"
+            Remove-Item -Path "$env:TEMP\minecraft_x86_temp.appx" -Force
+                Write-Host "cleared temp package"
         Write-Host "finished clearing up"
 
         [System.Windows.Forms.MessageBox]::Show("Finished", "Finished", 0, 64)
@@ -65,10 +99,10 @@ if ($result -eq 1){
         Write-Host "restored game data"
 
         Write-Host "clearing up..."
-        Remove-Item -Path "$env:TEMP\Microsoft.MinecraftUWP_8wekyb3d8bbwe" -Force -Recurse
-            Write-Host "cleared temp game data"
-        Remove-Item -Path "$env:TEMP\minecraft_x86_temp.appx" -Force
-            Write-Host "cleared temp package"
+            Remove-Item -Path "$env:TEMP\Microsoft.MinecraftUWP_8wekyb3d8bbwe" -Force -Recurse
+                Write-Host "cleared temp game data"
+            Remove-Item -Path "$env:TEMP\minecraft_x86_temp.appx" -Force
+                Write-Host "cleared temp package"
         Write-Host "finished clearing up"
 
         [System.Windows.Forms.MessageBox]::Show("Finished", "Finished", 0, 64)
