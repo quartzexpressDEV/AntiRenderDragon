@@ -22,3 +22,6 @@ if you have any questions dont hesitate to open a new issue
 oh i forgot to say this: PLEASE MAKE A BACKUP BEFORE RUNNING THIS
 
 have fun with it
+
+
+im gonna make it better yes just wait pls im a human too
