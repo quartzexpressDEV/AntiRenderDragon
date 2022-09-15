@@ -1,3 +1,6 @@
+**DISCONTINUED SINCE MOJANG DECIDED TO FORCE RENDERDRAGON UPON ALL VERSIONS OF BEDROCK**
+
+
 # AntiRenderDragon
 Powershell script to convert x64 minecraft to x86 minecraft.
 
